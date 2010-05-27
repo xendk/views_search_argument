@@ -1,0 +1,24 @@
+<?php
+
+function views_search_argument_views_data_alter(&$data) {
+  $data['search_index']['keys']['argument'] = array(
+    'handler' => 'views_handler_argument_search',
+  );
+}
+
+
+/**
+ * Implementation of hook_views_handlers().
+ */
+function views_search_argument_views_handlers() {
+  return array(
+    'info' => array(
+      'path' => drupal_get_path('module', 'views_search_argument') . '/handlers',
+    ),
+    'handlers' => array(
+      'views_handler_argument_search' => array(
+        'parent' => 'views_handler_argument',
+      ),
+    ),
+  );
+}

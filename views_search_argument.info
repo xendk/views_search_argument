@@ -1,0 +1,7 @@
+; $Id$
+name = Views search argument
+package = Views
+description = A Views argument that uses the search index.
+dependencies[] = views
+dependencies[] = search
+core = 6.x
